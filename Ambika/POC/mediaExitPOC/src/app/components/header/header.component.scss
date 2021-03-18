@@ -1,0 +1,30 @@
+.media_exit_header{
+  justify-content: space-between;
+  display: inline-flex;
+  width: 96%;
+  position: fixed;
+  background-color: white;
+  padding: 5px;
+  border-bottom: 2px solid grey;
+}
+.media-exit__orderer__logo-image img{
+  height: 86px;
+  width: 152px;
+  margin-left: -15px;
+}
+.media_exit_menu_bar{
+  display: flex;
+  .media_exit_user{
+    margin: 25px 5px;
+    font-size: 16px;
+  }
+  .menu {
+    height: 21px;
+    width: 31px;
+    display: inline-block;
+    // background-image: url('../../assets/images/menu.svg');
+    background-size: contain;
+    cursor: pointer;
+    margin: 25px 5px;
+  }
+}

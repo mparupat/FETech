@@ -1,0 +1,31 @@
+.me-accordion-tab ::ng-deep .p-accordion-header .p-accordion-header-link{
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+  border-color: black;
+}
+.me-accordion-tab ::ng-deep .p-accordion-content{
+  border: none;
+}
+.media-exit-pinupt{
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid grey !important;
+  border-radius: 0;
+}
+.me-subject .me-to .me-from ::ng-deep .p-inputtext{
+  background: #ced4da ;
+  border-bottom: 1px solid grey !important;
+  border-radius: 0;
+}
+.media-exit-button-container{
+  justify-content: flex-end;
+}
+.paginator-tab{
+  align-items: center;
+  justify-content: space-between;
+}
+::ng-deep .p-accordion .p-accordion-content{
+  margin: 0;
+  padding: 0;
+}
