@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="order-history">
+    <p-accordion class="accordian-panel">
+      <p-accordionTab header="Order Histry" [selected]="true" class="me-accordion-tab">
+        <div class="p-field media-exit-history-card1">
+          <div class="p-d-flex">
+            <div class="p-col-12 p-md-8">
+              <span class="p-float-label p-mt-3">
+                <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="subject"> 
+                <label>Subject</label>
+              </span>
+            </div>
+            <div class="p-col-12 p-md-4">
+              <span class="p-float-label p-mt-3">
+                <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="fileName"> 
+                <label>File Name</label>
+              </span>
+            </div>
+          </div>
+          <div class="p-d-flex">
+            <div class="p-col-12 p-md-4 p-mt-1">
+              <span class="p-float-label">
+                <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="senderEmail"> 
+                <label>Sender Email</label>
+              </span>
+            </div>
+            <div class="p-col-12 p-md-4 p-mt-1">
+              <span class="p-float-label">
+                <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="ReceiverEmail"> 
+                <label>Receiver Email</label>
+              </span>
+            </div>
+            <div class="p-col-12 p-md-4 p-mt-1">
+              <span class="p-float-label">
+                <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="channelName"> 
+                <label>Channel / Sales Client Name</label>
+              </span>
+            </div>
+          </div>
+          <div class="p-d-flex">
+            <div class="p-col-12 p-md-4 p-mt-4">
+              <div class="p-float-label">
+                <p-dropdown class="me-button-dropdown" [options]="pays" [(ngModel)]="selectedPay" optionLabel="name"></p-dropdown><label>Budget Code*</label>
+              </div>
+            </div>
+            <div class="p-col-6 p-md-2">
+              <label for="From">From</label>
+                <p-calendar [(ngModel)]="fromDate" [showIcon]="true" optionLabel="From" inputId="icon"></p-calendar>
+            </div>
+            <div class="p-col-6 p-md-2">
+              <label for="To">To</label>
+              <p-calendar [(ngModel)]="toDate" [showIcon]="true" optionLabel="To" inputId="icon"></p-calendar>
+            </div>
+            <div class="p-col-6 p-md-4 p-d-flex media-exit-button-container p-mt-4">
+              <p-button class="p-mr-1" label="Submit"></p-button>
+              <p-button class="p-ml-1" label="Reset All"></p-button>
+            </div>
+          </div>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+    <div class="paginator-tab p-d-flex p-m-2">
+      <div class="results">
+        {{1}}-{{20}} of {{totalRecords}}
+      </div>
+      <div>
+        <p-paginator [rows]="10" [totalRecords]="totalRecords"></p-paginator>
+      </div>
+      <div>
+        <button pButton pRipple type="button" label="EXPORT ALL" class="p-button-outlined p-button-secondary"></button>
+      </div>
+    </div>
+    <div>
+      <p-accordion *ngFor="let item of items; let i = index;" class="accordian-panel p-m-1">
+        <p-accordionTab header="{{item[i].name}}: {{item[i].value}}">
+          <div class="p-field media-exit-history-card1">{{item[i].name}}</div>
+          <div class="p-field media-exit-history-card1">{{item[i].value}}</div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+</div>
