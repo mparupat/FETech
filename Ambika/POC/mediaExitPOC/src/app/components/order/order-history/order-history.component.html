@@ -72,9 +72,9 @@
     </div>
     <div>
       <p-accordion *ngFor="let item of items; let i = index;" class="accordian-panel p-m-1">
-        <p-accordionTab header="{{item[i].name}}: {{item[i].value}}">
-          <div class="p-field media-exit-history-card1">{{item[i].name}}</div>
-          <div class="p-field media-exit-history-card1">{{item[i].value}}</div>
+        <p-accordionTab header="Order By: {{item.Order_by}}">
+          <div class="p-field media-exit-history-card1 p-m-2">Order Date: {{ item.Order_Date }}</div>
+          <div class="p-field media-exit-history-card1 p-m-2">Budget Code: {{ item.budget_code }}</div>
         </p-accordionTab>
       </p-accordion>
     </div>

@@ -25,10 +25,9 @@ export class OrderHistoryComponent implements OnInit {
   pays: City[];
   totalRecords: number = 100;
   items = [
-    [{ name:"Order by1", value: "ambika@virtusa.com"},{name: "Order Date1", value: "13-03-2021"},{ name: "budget code1", value: "A+E pays"}],
-    [{ name:"Order by2", value: "ambika@virtusa.com"},{name: "Order Date2", value: "13-03-2021"},{ name: "budget code2", value: "A+E pays"}],
-    [{ name:"Order by3", value: "ambika@virtusa.com"},{name: "Order Date3", value: "13-03-2021"},{ name: "budget code3", value: "A+E pays"}]
-
+    { Order_by: "ambika@virtusa.com", Order_Date: "13-03-2021", budget_code: "A+E pays"},
+    { Order_by: "harshita@virtusa.com", Order_Date: "18-03-2021", budget_code: "Client pays"},
+    { Order_by: "alok@virtusa.com", Order_Date: "22-03-2021", budget_code: "other"}
   ]
 
   selectedPay: City;
