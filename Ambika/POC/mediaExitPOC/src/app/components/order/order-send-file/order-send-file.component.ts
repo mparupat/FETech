@@ -72,7 +72,7 @@ export class OrderSendFileComponent implements OnInit {
       monthNamesShort: [ "jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec" ],
       today: 'Hoy',
       clear: 'Borrar'
-  }
+    }
 
     let today = new Date();
     let month = today.getMonth();

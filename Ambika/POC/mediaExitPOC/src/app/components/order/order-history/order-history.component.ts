@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 
 interface City {
   name: string,
@@ -7,7 +9,8 @@ interface City {
 @Component({
   selector: 'app-order-history',
   templateUrl: './order-history.component.html',
-  styleUrls: ['./order-history.component.scss']
+  styleUrls: ['./order-history.component.scss'],
+  providers: [MessageService]
 })
 export class OrderHistoryComponent implements OnInit {
 
@@ -25,21 +28,24 @@ export class OrderHistoryComponent implements OnInit {
   pays: City[];
   totalRecords: number = 100;
   items = [
-    { order_by: "ambika@virtusa.com", order_Date: "13-03-2021", budget_code: "A+E pays", ChannelName: "Some Channel", subject: "message", message: "ssskncklncndvjbd"},
-    { order_by: "harshita@virtusa.com", order_Date: "18-03-2021", budget_code: "Client pays", ChannelName: "channel2", subject: "somehting", message: "ssskncklncndvjbd"},
-    { order_by: "alok@virtusa.com", order_Date: "22-03-2021", budget_code: "other", ChannelName: "channel2", subject: "somehting", message: "ssskncklncndvjbd"}
+    { order_by: "ambika@virtusa.com", order_Date: "13-03-2021", budget_code: "A+E pays", ChannelName: "Some Channel", subject: "message", message: "Panel is a container with the optional content."},
+    { order_by: "harshita@virtusa.com", order_Date: "18-03-2021", budget_code: "Client pays", ChannelName: "channel2", subject: "something", message: "Panel is a container with the optional content toggle feature. and can be expandable"},
+    { order_by: "alok@virtusa.com", order_Date: "22-03-2021", budget_code: "other", ChannelName: "channel2", subject: "something and something", message: "Panel is a container with the optional content toggle feature."}
   ]
+  mItems: MenuItem[];
 
   selectedPay: City;
-  constructor() { 
+  constructor(private messageService: MessageService) { 
+    
     this.pays = [
       {name: 'A+E International Pays(505100)', code: 'NY'},
       {name: 'Client Pays ()', code: 'RM'},
       {name: 'Other', code: 'LDN'}
     ];
+  
   }
-
-  ngOnInit(): void {
+  
+  ngOnInit(){
     this.es = {
       firstDayOfWeek: 1,
       dayNames: [ "monday","Tuesday","wednesday","thursday","friday","satureday","sunday" ],
@@ -68,7 +74,14 @@ export class OrderHistoryComponent implements OnInit {
     let invalidDate = new Date();
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
+  }
+  
+update() {
+    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});
+  }
 
+delete() {
+  this.messageService.add({severity:'warn', summary:'Delete', detail:'Data Deleted'});
   }
 
 }

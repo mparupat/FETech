@@ -25,7 +25,22 @@
   align-items: center;
   justify-content: space-between;
 }
-::ng-deep .p-accordion .p-accordion-content{
-  margin: 0;
-  padding: 0;
+::ng-deep {
+  .p-accordion .p-accordion-content{
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .p-panel .p-panel-header .p-panel-header-icon{
+    position: relative;
+    top: -24px;
+    left: 5px;
+    border: 1px solid;
+    border-radius: 0;
+    background: #0000002b
+  }
+  .p-panel .p-panel-header{
+    border: 0;
+    background-color: #2f31330d;
+  }
 }

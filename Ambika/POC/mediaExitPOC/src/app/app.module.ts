@@ -10,6 +10,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from 'primeng/calendar';
 import { PaginatorModule } from 'primeng/paginator';
+import { PanelModule } from 'primeng/panel';
+import { MenuModule } from 'primeng/menu';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +43,9 @@ import { ReceiverComponent } from './components/receiver/receiver.component';
     DropdownModule,
     InputTextareaModule,
     CalendarModule,
-    PaginatorModule
+    PaginatorModule,
+    PanelModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
