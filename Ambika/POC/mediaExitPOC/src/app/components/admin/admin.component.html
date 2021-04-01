@@ -71,12 +71,60 @@
       </div>
     </div>
     <div>
-      <p-accordion *ngFor="let item of items; let i = index;" class="accordian-panel p-m-1">
-        <p-accordionTab header="{{item[i].name}}: {{item[i].value}}">
-          <div class="p-field media-exit-history-card1">{{item[i].name}}</div>
-          <div class="p-field media-exit-history-card1">{{item[i].value}}</div>
-        </p-accordionTab>
-      </p-accordion>
+      <p-panel [toggleable]="true" *ngFor="let item of items; let i = index;" [collapsed]="true" class="p-m-2">
+        <ng-template pTemplate="header">
+          <div class="p-grid">
+            <div class="p-col-3">Order By: {{item.order_by}}</div>
+            <div class="p-col-3">Order Date: {{item.order_Date}}</div>
+            <div class="p-col-3">Budget Code : {{item.budget_code}}</div>
+            <div class="p-col-3">Channel / Sales Client Name : {{item.ChannelName}}</div>
+            <div class="p-field p-col-3 media-exit-history-card1 p-m-2">Subject: {{ item.subject }}</div>
+            <div class="p-field p-col-6 media-exit-history-card1 p-m-2">message: {{ item.message }}</div>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="icons" expandIcon="pi pi-chevron-down">
+          
+        </ng-template>
+        <div class="p-d-flex ordered-item-contents">
+          <div class="p-m-1 p-col">
+            <div class="p-row p-bold">Expiry Date:</div>
+            <div>{{item.expiry_date}}</div>
+            <div class="p-row p-bold">Max Downloads:</div>
+            <div>{{item.max_downloads}}</div>
+            <div class="p-row p-bold">Number Of Files:</div>
+            <div>{{item.No_of_files}}</div>
+            <div class="p-row p-bold">Receiver List:</div>
+            <div class="p-row" *ngFor="let receiver of item.receivers">{{receiver.receiver_list}}</div>
+          </div>
+          <div class="p-m-1 p-col">
+            <div class="p-row" *ngFor= "let files of item.fileName">
+              <div class="p-d-flex">
+                <img
+                  src="../../assets/images/file.svg"
+                  alt="file"
+                  max-width="44"
+                  min-width="44"
+                />
+                <div class="p-m-1">
+                  <div>{{files.file}}</div>
+                  <div>Modified: {{files.Modified}} | {{files.file_size}}</div>
+                  <div>Expiry Date: {{files.expiryDate}} | Max Downloads : {{files.max_downloads}}</div>
+                  <div>{{files.bucket_name}} / {{files.file_name}}</div>
+                </div>
+                <div
+                  class="status-label-big p-m-1"
+                  [style]="{
+                    'background-color': getColor(
+                      files.status
+                    )
+                  }"
+                >{{files.status}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-panel>
     </div>
   </div>
 </div>
