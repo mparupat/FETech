@@ -20,6 +20,7 @@ export class OrderSendFileComponent implements OnInit {
   value1: any;
   value2: any;
   value3: any;
+  emailto: string[];
   
   activeState: boolean[] = [true, false, false];
 

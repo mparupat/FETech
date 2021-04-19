@@ -90,6 +90,7 @@
 
 
 <div class="content" role="main">
+  <!-- <span>{{title}}</span> -->
   <app-header class="media-exit-headerbar"></app-header>
   <div class="card-container">
     <app-order-send-file class="media-exit-send-file p-m-1"></app-order-send-file>
@@ -100,6 +101,9 @@
   <footer>
     ©2020, A&E Television Networks, LLC. All Rights Reserved&nbsp;
   </footer>
-
 </div>
+<nav>
+  <a routerLink="/order" routerLinkActive="active">Order</a>
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</nav>
 <router-outlet></router-outlet>
