@@ -9,11 +9,16 @@
 .media-exit-send-card1{
   background-color: #e4e4e3;
 }
-.media-exit-pinupt{
+::ng-deep .me-to .p-inputtext{
+  width: 100% !important;
+  // border-bottom: 1px solid grey !important;
+  border-radius: 0;
+  border: none;
+  background: #e4e4e3;
+}
+::ng-deep .me-to .p-chips{
   width: 100%;
   border-bottom: 1px solid grey !important;
-  border-radius: 0;
-  background: #e4e4e3;
 }
 .media-exit-button{
   align-items: center;
@@ -53,11 +58,7 @@
   border: 1px solid black !important;
   border-radius: 0;
 }
-// .me-subject .me-to .me-from ::ng-deep .p-inputtext{
-//     background: #e4e4e3;
-//     border-bottom: 1px solid grey;
-//     border-radius: 0;
-// }
+
 .me-from{
   border-bottom: 1px solid grey !important;
   border-radius: 0;

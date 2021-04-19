@@ -12,9 +12,10 @@ import { CalendarModule } from 'primeng/calendar';
 import { PaginatorModule } from 'primeng/paginator';
 import { PanelModule } from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
+import { ChipsModule } from 'primeng/chips';
 
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { OrderSendFileComponent } from './components/order/order-send-file/order-send-file.component';
@@ -26,6 +27,7 @@ import { ReceiverComponent } from './components/receiver/receiver.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    routingComponents,
     OrderSendFileComponent,
     OrderHistoryComponent,
     AdminComponent,
@@ -45,7 +47,8 @@ import { ReceiverComponent } from './components/receiver/receiver.component';
     CalendarModule,
     PaginatorModule,
     PanelModule,
-    MenuModule
+    MenuModule,
+    ChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
