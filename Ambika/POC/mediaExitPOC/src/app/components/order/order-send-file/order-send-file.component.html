@@ -1,0 +1,81 @@
+
+  <div class="container">
+    <div class="expantion_panel">
+      <p-accordion class="accordian-panel">
+        <p-accordionTab header="Send File(s)" [selected]="true" class="me-accordion-tab">
+          <div class="p-field media-exit-send-card1">
+              <div class="p-ml-4 p-mr-4 p-pt-4">
+                <span>From*:</span><input type="text" class="me-from" pInputText [(ngModel)]="value1">
+                <a>edit</a>
+              </div>
+              <div class="p-m-4">
+                <span class="p-float-label">
+                  <p-chips separator="," class="media-exit-pinupt me-to" [(ngModel)]="emailto"></p-chips>
+                  <!-- <input type="text" class="media-exit-pinupt me-to" pInputText [(ngModel)]="value2">  -->
+                  <label>To*</label>
+                </span>
+              </div>
+              <div class="p-m-4 p-d-flex">
+                <div class="p-field-checkbox p-m-1">
+                  <p-checkbox [(ngModel)]="checked1" inputId="binary"></p-checkbox>
+                  <label>Mark me in cc</label>
+                </div>
+                <div class="p-field-checkbox p-m-1">
+                  <p-checkbox [(ngModel)]="checked2" inputId="binary"></p-checkbox>
+                  <label>Include global fulfilment list</label>
+                </div>
+              </div>
+              <div class="p-d-flex">
+                <div class="p-col-12 p-md-8 p-ml-3">
+                  <span class="p-float-label">
+                    <input type="text" class="media-exit-pinupt me-subject" pInputText [(ngModel)]="subject"> 
+                    <label>Subject*</label>
+                  </span>
+                </div>
+                <div class="p-col-6 p-md-4 p-m-1 p-d-flex media-exit-button">
+                  <p-button class="p-m-1" label="Send"></p-button>
+                  <p-button class="p-m-1" label="Reset Order"></p-button>
+                </div>
+              </div> 
+          </div>
+          <div class="d-field media-exit-send-card2">
+            <div class="p-d-flex">
+              <div class="p-col-12 p-md-6">
+              <div class="p-float-label p-m-4">
+                <p-dropdown class="me-button-dropdown" [options]="pays" [(ngModel)]="selectedPay" optionLabel="name"></p-dropdown><label>Budget Code*</label>
+              </div>
+              <div class="p-m-4">
+                <span class="p-float-label">
+                  <input type="text" class="me-channel" pInputText [(ngModel)]="channel"> 
+                  <label>channel / Sales Client Name*</label>
+                </span>
+              </div>
+              <div class="p-m-4">
+                <span class="p-float-label">
+                  <textarea inputId="textarea" class="me-message" rows="3" cols="60" [(ngModel)]="message" pInputTextarea></textarea>
+                  <label for="textarea">Message</label>
+              </span>
+              </div>
+              <div class="p-m-3 p-d-flex">
+                <div class="p-col-6 p-md-8">
+                  <label for="Expiry Date">Expiry Date*</label>
+                  <p-calendar [(ngModel)]="expiryDate" [showIcon]="true" optionLabel="Expiry Date" inputId="icon"></p-calendar>
+                </div>
+                <div class="p-col-6 p-md-4">
+                  <label for="Max Downloads">Max Downloads</label>
+                  <p-dropdown [options]="downloads" [(ngModel)]="selectedDownloads" optionLabel="Max Downloads"></p-dropdown>
+                </div>
+              </div>
+            </div>
+            <div class="p-col-12 p-md-5">
+              <span class="p-m-4 p-input-icon-left me-search">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Search" class="me-subject" [(ngModel)]="search"/>
+              </span>
+            </div>
+            </div>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
